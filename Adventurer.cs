@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Quest
 {
@@ -14,13 +15,23 @@ namespace Quest
         //  So it can be read and changed by any code in the application
         public int Awesomeness { get; set; }
 
+        // immutable property to the Adventurer class called ColorfulRobe. The type of this property should be Robe.
+        public Robe ColorfulRobe { get; }
+
         // A constructor to make a new Adventurer object with a given name
-        public Adventurer()
+        public Adventurer(Robe robe)
         {
             Name = Console.ReadLine();
+            ColorfulRobe = robe;
             Awesomeness = 50;
         }
 
+        public string GetDescription()
+        {
+            //robe colors would not work until creating a string and joinging...unsure why
+            string RobeColors = String.Join(", ", ColorfulRobe.Colors);
+            return $"{Name} wearing a {RobeColors} that is {ColorfulRobe.Length}";
+        }
 
         // This method returns a string that describes the Adventurer's status
         // Note one way to describe what this method does is:
