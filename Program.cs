@@ -14,6 +14,7 @@ namespace Quest
             //   the text of the challenge
             //   a correct answer
             //   a number of awesome points to gain or lose depending on the success of the challenge
+
             System.Console.Write("Whats you're name? ");
             Challenge twoPlusTwo = new Challenge("2 + 2?", 4, 10);
             Challenge theAnswer = new Challenge(
@@ -44,11 +45,13 @@ namespace Quest
             int maxAwesomeness = 100;
 
             // create a new instance of the Robe class and set its properties.
-            Robe robe = new Robe();
-            robe.Colors = new List<string>();
-            robe.Length = 30;
+            Robe CoolRobe = new Robe();
+            CoolRobe.Colors = new List<string>();
+            CoolRobe.Length = 30;
+            CoolRobe.Colors.Add("Blue, Orange, and Red");
             // Make a new "Adventurer" object using the "Adventurer" class
-            Adventurer theAdventurer = new Adventurer(robe);
+            Adventurer theAdventurer = new Adventurer(CoolRobe);
+            System.Console.WriteLine(theAdventurer.GetDescription());
 
 
             // A list of challenges for the Adventurer to complete
