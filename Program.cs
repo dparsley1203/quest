@@ -14,7 +14,7 @@ namespace Quest
             //   the text of the challenge
             //   a correct answer
             //   a number of awesome points to gain or lose depending on the success of the challenge
-            System.Console.WriteLine("Whats you're name?");
+            System.Console.Write("Whats you're name? ");
             Challenge twoPlusTwo = new Challenge("2 + 2?", 4, 10);
             Challenge theAnswer = new Challenge(
                 "What's the answer to life, the universe and everything?", 42, 25);
@@ -26,11 +26,11 @@ namespace Quest
 
             Challenge favoriteBeatle = new Challenge(
                 @"Who's your favorite Beatle?
-    1) John
-    2) Paul
-    3) George
-    4) Ringo
-",
+                    1) John
+                    2) Paul
+                    3) George
+                    4) Ringo
+                ",
                 4, 20
             );
 
@@ -76,6 +76,22 @@ namespace Quest
             else
             {
                 Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+            }
+
+            Console.Write($"Would you like to play again? (Y/N): ");
+            string answer = Console.ReadLine().ToLower();
+
+            while (answer != "y" && answer != "n")
+            {
+                Console.Write($"Would you like to play again? (Y/N): ");
+                answer = Console.ReadLine().ToLower();
+            }
+            if (answer == "y")
+            {
+                foreach (Challenge challenge in challenges)
+                {
+                    challenge.RunChallenge(theAdventurer);
+                }
             }
         }
     }
