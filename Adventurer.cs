@@ -18,11 +18,14 @@ namespace Quest
         // immutable property to the Adventurer class called ColorfulRobe. The type of this property should be Robe.
         public Robe ColorfulRobe { get; }
 
+        public Hat HatType { get; }
+
         // A constructor to make a new Adventurer object with a given name
-        public Adventurer(Robe robe)
+        public Adventurer(Robe robe, Hat hat)
         {
             Name = Console.ReadLine();
             ColorfulRobe = robe;
+            HatType = hat;
             Awesomeness = 50;
         }
 
@@ -30,7 +33,7 @@ namespace Quest
         {
             //robe colors would not work until creating a string and joinging...unsure why
             string RobeColors = String.Join(", ", ColorfulRobe.Colors);
-            return $"{Name} wearing a {RobeColors} that is {ColorfulRobe.Length}";
+            return $"{Name} is wearing a {HatType.ShininessDescription} hat and a {RobeColors} robe that is {ColorfulRobe.Length} inches long";
         }
 
         // This method returns a string that describes the Adventurer's status
