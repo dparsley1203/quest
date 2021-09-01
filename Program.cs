@@ -49,8 +49,11 @@ namespace Quest
             CoolRobe.Colors = new List<string>();
             CoolRobe.Length = 30;
             CoolRobe.Colors.Add("Blue, Orange, and Red");
+
+            Hat CoolHat = new Hat();
+            CoolHat.ShineinessLevel = 4;
             // Make a new "Adventurer" object using the "Adventurer" class
-            Adventurer theAdventurer = new Adventurer(CoolRobe);
+            Adventurer theAdventurer = new Adventurer(CoolRobe, CoolHat);
             System.Console.WriteLine(theAdventurer.GetDescription());
 
 
